@@ -6,6 +6,6 @@ from .models import Todo
 
 def index(request):
     todos = Todo.objects.all()
-    t = loader.get_template('todo/base.html')
+    t = loader.get_template('todo/index.html')
     c = Context({'todos': todos})
     return HttpResponse(t.render(c))

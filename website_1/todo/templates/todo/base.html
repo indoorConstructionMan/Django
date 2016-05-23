@@ -4,13 +4,7 @@
     <title>Todo Application</title>
   </head>
   <body>
-    <h1>Todo List</h1>
-    
-    <ul>
-      {% for todo in todos %}
-      <li>{{ todo.todo_description }}</li>
-      {% endfor %}
-    </ul>
-
+    {% block content %}
+    {% endblock %}
   </body>
 </html>

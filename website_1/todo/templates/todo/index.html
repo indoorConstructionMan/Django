@@ -1,0 +1,17 @@
+{% extends "todo/base.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}" />
+
+{% block content %}
+  <h1>Todo List</h1>
+  <input type="submit" value="New Todo" />
+  <ul>
+    {% for todo in todos %}
+      {% if todo.todo_completed == False %}
+        <li style="color:red;">{{ todo.todo_description}}</li>
+      {% elif todo.todo_completed == True %}
+        <li style="color:green;">{{ todo.todo_description}}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}
