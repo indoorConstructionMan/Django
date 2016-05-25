@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}" />
     <title>Todo Application</title>
   </head>
-  <body>
+  <body class="index">
     {% block content %}
     {% endblock %}
   </body>

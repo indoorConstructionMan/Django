@@ -1,17 +1,20 @@
 {% extends "todo/base.html" %}
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}" />
 
 {% block content %}
-  <h1>Todo List</h1>
-  <input type="submit" value="New Todo" />
-  <ul>
-    {% for todo in todos %}
+<div>
+  <h1>List of Todos</h1>
+  <a href="/todo/create/"><input type="submit" value="Click here to add a new todo" /></a>
+</div>
+<ul>
+  {% for todo in todos %}
+    <div class="listElement">
       {% if todo.todo_completed == False %}
-        <li style="color:red;">{{ todo.todo_description}}</li>
+        <li id="textfield" style="color:red;">{{ todo.todo_description}}</li>
       {% elif todo.todo_completed == True %}
-        <li style="color:green;">{{ todo.todo_description}}</li>
+        <li id="textfield" style="color:green;">{{ todo.todo_description}}</li>
       {% endif %}
-    {% endfor %}
-  </ul>
+      <button onclick="editView()" style="float=left;">Edit</button>
+    </div>
+  {% endfor %}
+</ul>
 {% endblock %}

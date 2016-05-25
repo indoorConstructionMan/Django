@@ -1,0 +1,11 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<form action="/todo/" method="post">
+{% csrf_token %}
+    <label for="description">Description:</label>
+    <input id="description" type="text" name="your_name" value="{{ current_name }}">
+    <a href="/todo/"><input type="submit" value="Save Todo"></a>
+    <a href="/todo/index/"><input type="submit" value="Back"></a>
+</form>
+{% endblock %}
